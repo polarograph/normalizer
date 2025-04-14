@@ -1,5 +1,6 @@
 package club.polarite.normalizer.mixin;
 
+import club.polarite.normalizer.Normalizer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
@@ -15,6 +16,7 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.FluidState;
 
 import org.spongepowered.asm.mixin.Mixin;
@@ -44,10 +46,14 @@ public abstract class WaterBucketMixin {
         Direction clickedFace = context.getClickedFace();
         BlockPos targetPos = clickedPos.relative(clickedFace);
         BlockState targetState = level.getBlockState(targetPos);
-        FluidState waterFluidState = Blocks.WATER.defaultBlockState().getFluidState();
 
-        if (!targetState.isAir() && !targetState.canBeReplaced(waterFluidState.getType())) {
+        if (!targetState.isAir() && targetState.canBeReplaced(Fluids.WATER)) {
             return;
+        }
+
+        if (level.getBlockState(clickedPos).canBeReplaced(Fluids.WATER)) {
+            targetPos = clickedPos;
+            targetState = level.getBlockState(clickedPos);
         }
 
         if (level.isClientSide()) {
