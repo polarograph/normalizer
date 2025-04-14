@@ -1,0 +1,32 @@
+{
+	"schemaVersion": 1,
+	"id": "normalizer",
+	"version": "${version}",
+	"name": "Normal1.8zer",
+	"description": "Revert some game mechanics back to what they were in 1.8",
+	"authors": [
+		"Polarograph"
+	],
+	"contact": {
+		"homepage": "https://github.com/polarograph/Normal1.8zer",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/normalizer/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"club.polarite.normalizer.Normalizer"
+		]
+	},
+	"mixins": [
+		"normalizer.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.13",
+		"minecraft": "~1.21.4",
+		"java": ">=21",
+		"fabric-api": "*",
+		"animatium": "*",
+	}
+}

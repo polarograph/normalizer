@@ -1,0 +1,14 @@
+{
+	"required": true,
+	"package": "club.polarite.normalizer.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"SneakHitboxMixin",
+		"DisableCrawlMixin",
+		"DisableSwimMixin",
+		"WaterBucketMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
