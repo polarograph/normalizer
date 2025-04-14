@@ -8,10 +8,10 @@
 		"Polarograph"
 	],
 	"contact": {
-		"homepage": "https://github.com/polarograph/Normal1.8zer",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/polarograph/normalizer",
+		"sources": "https://github.com/polarograph/normalizer"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/normalizer/icon.png",
 	"environment": "*",
 	"entrypoints": {
@@ -27,6 +27,6 @@
 		"minecraft": "~1.21.4",
 		"java": ">=21",
 		"fabric-api": "*",
-		"animatium": "*",
+		"animatium": "*"
 	}
 }
