@@ -20,7 +20,7 @@
 			"club.polarite.normalizer.Normalizer"
 		],
 		"modmenu": [
-			"club.polarite.normalizer.NormalizerModMenuIntegration"
+			"club.polarite.normalizer.config.NormalizerModMenuIntegration"
 		]
 	},
 	"mixins": [
