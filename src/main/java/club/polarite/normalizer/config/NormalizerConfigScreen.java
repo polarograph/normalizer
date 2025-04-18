@@ -58,6 +58,17 @@ public class NormalizerConfigScreen {
 
         general.addEntry(entryBuilder
                 .startBooleanToggle(
+                        Component.translatable("config.normalizer.option.fixSneakDesync"),
+                        config.fixSneakDesync
+                )
+                .setDefaultValue(true)
+                .setTooltip(Component.translatable("config.normalizer.tooltip.fixSneakDesync"))
+                .setSaveConsumer(value -> config.fixSneakDesync = value)
+                .build()
+        );
+
+        general.addEntry(entryBuilder
+                .startBooleanToggle(
                         Component.translatable("config.normalizer.option.restoreLegacyBuckets"),
                         config.restoreLegacyBuckets
                 )
