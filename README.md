@@ -15,7 +15,7 @@ Big thanks to Cecer for making the original mod, & big thanks to the Animatium t
 This mod modifies:
 - Swimming (disabled)
 - Crawling (disabled)
-- Sneak Hitbox (reverted back to <=1.8)
+- Sneaking (Hitbox reverted back to <=1.8 & MC-159163 fix)
 - Buckets (reverted back to <=1.12.2)
 
 The following changes make the general experience much better & less buggy, allowing for smoother gameplay on the latest versions
