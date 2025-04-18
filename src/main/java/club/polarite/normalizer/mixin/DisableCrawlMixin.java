@@ -1,6 +1,7 @@
 package club.polarite.normalizer.mixin;
 
 import com.llamalad7.mixinextras.sugar.Local;
+import club.polarite.normalizer.config.ConfigManager;
 
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -13,7 +14,6 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-
 
 /**
  * Disables crawling completely, along with auto sneaking.
@@ -33,6 +33,11 @@ public abstract class DisableCrawlMixin extends LivingEntity {
             cancellable = true
     )
     protected void disablePoseToFit(CallbackInfo ci, @Local(ordinal = 0) Pose pose) {
+        boolean disableCrawling = ConfigManager.getConfig().disableCrawling;
+        if (!disableCrawling) {
+            return;
+        }
+
         Pose pose2;
         if (this.isSpectator() || this.isPassenger() || this.canPlayerFitWithinBlocksAndEntitiesWhen(pose)) {
             pose2 = pose;

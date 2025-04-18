@@ -2,6 +2,7 @@ package club.polarite.normalizer.mixin;
 
 import com.llamalad7.mixinextras.sugar.Local;
 import com.llamalad7.mixinextras.sugar.ref.LocalBooleanRef;
+import club.polarite.normalizer.config.ConfigManager;
 
 import net.minecraft.world.entity.Entity;
 
@@ -20,6 +21,11 @@ public class DisableSwimMixin {
             at = @At("HEAD")
     )
     protected void onSetSwimming(CallbackInfo ci, @Local(argsOnly = true) LocalBooleanRef state) {
+        boolean disableSwimming = ConfigManager.getConfig().disableSwimming;
+        if (!disableSwimming) {
+            return;
+        }
+
         if (!state.get()) {
             return;
         }

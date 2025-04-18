@@ -15,10 +15,12 @@ Big thanks to Cecer for making the original mod, & big thanks to the Animatium t
 This mod modifies:
 - Swimming (disabled)
 - Crawling (disabled)
-- Sneak Hitbox (reverted back to 1.8)
-- Waterlogging (disabled)
+- Sneak Hitbox (reverted back to <=1.8)
+- Buckets (reverted back to <=1.12.2)
 
 The following changes make the general experience much better & less buggy, allowing for smoother gameplay on the latest versions
+
+You can access the mod's config via `/normalizerconfig` or ModMenu if you have it installed.
 
 ## wen 1.21.5
 When Animatium updates

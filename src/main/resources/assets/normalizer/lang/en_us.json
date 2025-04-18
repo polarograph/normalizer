@@ -1,0 +1,12 @@
+{
+  "config.normalizer.title": "Normal1.8zer Settings",
+  "config.normalizer.category.general": "General",
+  "config.normalizer.option.restoreSneakingHitbox": "Restore 1.8 Sneaking Hitbox",
+  "config.normalizer.tooltip.restoreSneakingHitbox": "Reverts sneaking hitbox to the pre-1.9 height",
+  "config.normalizer.option.disableSwimming": "Disable Swimming",
+  "config.normalizer.tooltip.disableSwimming": "Turns off the new swimming mechanics.",
+  "config.normalizer.option.disableCrawling": "Disable Crawling",
+  "config.normalizer.tooltip.disableCrawling": "Disables the annoying crawling pose.",
+  "config.normalizer.option.restoreLegacyBuckets": "Restore Legacy Buckets (<=1.12.2)",
+  "config.normalizer.tooltip.restoreLegacyBuckets": "A port of the old pre-aquatic water/lava buckets; §crequires Minecraft restart."
+}
