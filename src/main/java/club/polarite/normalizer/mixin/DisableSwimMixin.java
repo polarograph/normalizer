@@ -25,6 +25,9 @@ public class DisableSwimMixin {
         if (!disableSwimming) {
             return;
         }
+        if (!ConfigManager.isWhitelisted) {
+            return;
+        }
 
         if (!state.get()) {
             return;

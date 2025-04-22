@@ -22,6 +22,10 @@ public class SneakDesyncFixMixin {
     private void onHandleSetEntityData(ClientboundSetEntityDataPacket packet, CallbackInfo ci) {
         boolean fixSneakDesync = ConfigManager.getConfig().fixSneakDesync;
 
+        if (!ConfigManager.isWhitelisted) {
+            return;
+        }
+
         Minecraft minecraft = Minecraft.getInstance();
         Entity entity = minecraft.level.getEntity(packet.id());
 

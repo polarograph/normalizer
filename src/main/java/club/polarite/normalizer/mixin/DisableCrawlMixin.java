@@ -37,6 +37,9 @@ public abstract class DisableCrawlMixin extends LivingEntity {
         if (!disableCrawling) {
             return;
         }
+        if (!ConfigManager.isWhitelisted) {
+            return;
+        }
 
         Pose pose2;
         if (this.isSpectator() || this.isPassenger() || this.canPlayerFitWithinBlocksAndEntitiesWhen(pose)) {

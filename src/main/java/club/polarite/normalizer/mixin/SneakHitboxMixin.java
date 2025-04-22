@@ -24,9 +24,13 @@ public abstract class SneakHitboxMixin {
             return;
         }
 
+        if (!ConfigManager.isWhitelisted) {
+            return;
+        }
+
         if (pose == Pose.CROUCHING) {
-            EntityDimensions customDimensions = SneakDimensions.getCustomCrouchDimensions();
-            cir.setReturnValue(customDimensions);
+            EntityDimensions sneakDimensions = EntityDimensions.scalable(0.6F, 1.8F);
+            cir.setReturnValue(sneakDimensions);
         }
     }
 }
