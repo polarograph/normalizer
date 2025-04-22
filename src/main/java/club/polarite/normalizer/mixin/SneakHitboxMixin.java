@@ -1,7 +1,6 @@
 package club.polarite.normalizer.mixin;
 
 import club.polarite.normalizer.config.ConfigManager;
-import club.polarite.normalizer.util.SneakDimensions;
 
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.Pose;
