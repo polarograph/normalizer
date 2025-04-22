@@ -70,7 +70,7 @@ public class Normalizer implements ModInitializer {
                 ConfigManager.isWhitelisted = !ConfigManager.getConfig().multiplayerOnly;
             }
 
-            if (ConfigManager.getConfig().fixSneakDesync) {
+            if (ConfigManager.getConfig().fixSneakDesync && ConfigManager.isWhitelisted && multiplayer) {
                 Ticks.runAfter(40, () -> {
                     LocalPlayer player = client.player;
                     if (player != null) {
