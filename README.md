@@ -21,6 +21,3 @@ This mod modifies:
 The following changes make the general experience much better & less buggy, allowing for smoother gameplay on the latest versions
 
 You can access the mod's config via `/normalizerconfig` or ModMenu if you have it installed.
-
-## wen 1.21.5
-When Animatium updates
