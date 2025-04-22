@@ -14,6 +14,7 @@
   "config.normalizer.tooltip.restoreLegacyBuckets": "A port of the old pre-aquatic water/lava buckets; §crequires Minecraft restart.",
   "config.normalizer.option.serverWhitelist": "Whitelisted Servers",
   "config.normalizer.tooltip.serverWhitelist": "List of servers that the mod is enabled on.",
-  "config.normalizer.option.multiplayerOnly": "Multiplayer only",
-  "config.normalizer.tooltip.multiplayerOnly": "Limits the mod to only §lwhitelisted§r Multiplayer servers."
+  "config.normalizer.option.multiplayerOnly": "Multiplayer Only",
+  "config.normalizer.tooltip.multiplayerOnly": "Limits the mod to only §lwhitelisted§r Multiplayer servers.",
+  "club.polarite.normalizer.sneakDesyncFixWarningMessage": "§cNORMAL1.8ZER §4You have enabled the Sneak Desync Fix, which is known to flag some anticheats.\n\n§lPROCEED AT YOUR OWN RISK!\n\n§4To disable the fix, run §b/normalizerconfig§4 and toggle the setting."
 }

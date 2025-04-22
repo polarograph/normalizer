@@ -11,9 +11,15 @@ import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
 import net.minecraft.client.Minecraft;
 
+import net.minecraft.client.gui.screens.ChatScreen;
+import net.minecraft.client.player.LocalPlayer;
+import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.awt.*;
 import java.io.ObjectInputFilter;
 
 public class Normalizer implements ModInitializer {
@@ -62,6 +68,18 @@ public class Normalizer implements ModInitializer {
                         });
             } else {
                 ConfigManager.isWhitelisted = !ConfigManager.getConfig().multiplayerOnly;
+            }
+
+            if (ConfigManager.getConfig().fixSneakDesync) {
+                Ticks.runAfter(40, () -> {
+                    LocalPlayer player = client.player;
+                    if (player != null) {
+                        Component message = Component.translatable("club.polarite.normalizer.sneakDesyncFixWarningMessage");
+                        player.displayClientMessage(message, false);
+
+                        client.level.playLocalSound(player.getX(), player.getY(), player.getZ(), SoundEvents.ANVIL_DESTROY, SoundSource.MASTER, 1.0F, 1.0F, false);
+                    }
+                });
             }
         });
     }
