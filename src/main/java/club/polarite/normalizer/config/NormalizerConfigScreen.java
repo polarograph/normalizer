@@ -7,6 +7,8 @@ import me.shedaniel.clothconfig2.api.ConfigEntryBuilder;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 
+import java.util.Arrays;
+
 /**
  * Config screen
  * Localizations in resources/assets/normalizer/lang/*.json
@@ -21,6 +23,7 @@ public class NormalizerConfigScreen {
                 .setSavingRunnable(ConfigManager::saveConfig);
 
         ConfigCategory general = builder.getOrCreateCategory(Component.translatable("config.normalizer.category.general"));
+        ConfigCategory servers = builder.getOrCreateCategory(Component.translatable("config.normalizer.category.servers"));
         ConfigEntryBuilder entryBuilder = builder.entryBuilder();
 
         general.addEntry(entryBuilder
@@ -61,7 +64,7 @@ public class NormalizerConfigScreen {
                         Component.translatable("config.normalizer.option.fixSneakDesync"),
                         config.fixSneakDesync
                 )
-                .setDefaultValue(true)
+                .setDefaultValue(false)
                 .setTooltip(Component.translatable("config.normalizer.tooltip.fixSneakDesync"))
                 .setSaveConsumer(value -> config.fixSneakDesync = value)
                 .build()
@@ -72,9 +75,32 @@ public class NormalizerConfigScreen {
                         Component.translatable("config.normalizer.option.restoreLegacyBuckets"),
                         config.restoreLegacyBuckets
                 )
-                .setDefaultValue(true)
+                .setDefaultValue(false)
                 .setTooltip(Component.translatable("config.normalizer.tooltip.restoreLegacyBuckets"))
                 .setSaveConsumer(value -> config.restoreLegacyBuckets = value)
+                .requireRestart()
+                .build()
+        );
+
+        servers.addEntry(entryBuilder
+                .startStrList(
+                        Component.translatable("config.normalizer.option.serverWhitelist"),
+                        config.serverWhitelist
+                )
+                .setDefaultValue(Arrays.asList("*.hypixel.net"))
+                .setTooltip(Component.translatable("config.normalizer.tooltip.serverWhitelist"))
+                .setSaveConsumer(list -> config.serverWhitelist = list)
+                .build()
+        );
+
+        servers.addEntry(entryBuilder
+                .startBooleanToggle(
+                        Component.translatable("config.normalizer.option.multiplayerOnly"),
+                        config.multiplayerOnly
+                )
+                .setDefaultValue(true)
+                .setTooltip(Component.translatable("config.normalizer.tooltip.multiplayerOnly"))
+                .setSaveConsumer(value -> config.multiplayerOnly = value)
                 .build()
         );
 
