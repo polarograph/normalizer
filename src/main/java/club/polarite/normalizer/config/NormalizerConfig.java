@@ -13,6 +13,7 @@ public class NormalizerConfig {
     public boolean disableCrawling = true;
     public boolean fixSneakDesync = false;
     public boolean restoreLegacyBuckets = false;
+    public boolean restoreSprintCancel = true;
 
     public List<String> serverWhitelist = new ArrayList<>(
             Arrays.asList("*.hypixel.net")

@@ -4,10 +4,12 @@ import me.shedaniel.clothconfig2.api.ConfigBuilder;
 import me.shedaniel.clothconfig2.api.ConfigCategory;
 import me.shedaniel.clothconfig2.api.ConfigEntryBuilder;
 
+import net.minecraft.SharedConstants;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 /**
  * Config screen
@@ -16,6 +18,7 @@ import java.util.Arrays;
 public class NormalizerConfigScreen {
     public static Screen create(Screen parent) {
         NormalizerConfig config = ConfigManager.getConfig();
+        String mcVersion = SharedConstants.getCurrentVersion().getName();
 
         ConfigBuilder builder = ConfigBuilder.create()
                 .setParentScreen(parent)
@@ -81,6 +84,19 @@ public class NormalizerConfigScreen {
                 .requireRestart()
                 .build()
         );
+
+        if (!Objects.equals(mcVersion, "1.21.4")) {
+            general.addEntry(entryBuilder
+                    .startBooleanToggle(
+                            Component.translatable("config.normalizer.option.restoreSprintCancel"),
+                            config.restoreSprintCancel
+                    )
+                    .setDefaultValue(true)
+                    .setTooltip(Component.translatable("config.normalizer.tooltip.restoreSprintCancel"))
+                    .setSaveConsumer(value -> config.restoreSprintCancel = value)
+                    .build()
+            );
+        }
 
         servers.addEntry(entryBuilder
                 .startStrList(

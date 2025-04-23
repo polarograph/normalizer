@@ -10,11 +10,13 @@
   "config.normalizer.tooltip.disableCrawling": "Disables the annoying crawling pose.",
   "config.normalizer.option.fixSneakDesync": "Fix Sneak Desync",
   "config.normalizer.tooltip.fixSneakDesync": "Fixes §eMC-159163§r (which produces the double sneaking bug)\n§4MAY RESULT IN FALSE BANS, USE AT YOUR OWN RISK",
-  "config.normalizer.option.restoreLegacyBuckets": "Restore Legacy Buckets (<=1.12.2).",
-  "config.normalizer.tooltip.restoreLegacyBuckets": "A port of the old pre-aquatic water/lava buckets; §crequires Minecraft restart.",
+  "config.normalizer.option.restoreLegacyBuckets": "Restore Legacy Buckets",
+  "config.normalizer.tooltip.restoreLegacyBuckets": "A port of the old pre-aquatic (<=1.12.2) water/lava buckets; §crequires Minecraft restart.",
+  "config.normalizer.option.restoreSprintCancel": "Restore Sprint Canceling",
+  "config.normalizer.tooltip.restoreSprintCancel": "Fixes §eMC-152728§r\n\nRestores sprint canceling when you do actions that slow you down\n& should cancel your sprint (eg: eating, blocking).\n\nThis was fixed in 1.21.4 but was reverted in 1.21.5 after community backlash",
   "config.normalizer.option.serverWhitelist": "Whitelisted Servers",
   "config.normalizer.tooltip.serverWhitelist": "List of servers that the mod is enabled on.",
   "config.normalizer.option.multiplayerOnly": "Multiplayer Only",
-  "config.normalizer.tooltip.multiplayerOnly": "Limits the mod to only §lwhitelisted§r Multiplayer servers.",
+  "config.normalizer.tooltip.multiplayerOnly": "Limits the mod to only Multiplayer servers.",
   "club.polarite.normalizer.sneakDesyncFixWarningMessage": "§cNORMAL1.8ZER §4You have enabled the Sneak Desync Fix, which is known to flag some anticheats.\n\n§lPROCEED AT YOUR OWN RISK!\n\n§4To disable the fix, run §b/normalizerconfig§4 and toggle the setting."
 }

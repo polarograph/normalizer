@@ -4,11 +4,12 @@
 	"plugin": "club.polarite.normalizer.config.NormalizerConfigMixinPlugin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"SneakHitboxMixin",
+		"BucketItemMixin",
 		"DisableCrawlMixin",
 		"DisableSwimMixin",
 		"SneakDesyncFixMixin",
-		"BucketItemMixin"
+		"SneakHitboxMixin",
+		"SprintResetMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
