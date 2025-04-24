@@ -19,6 +19,7 @@ public class ConfigManager {
     private static NormalizerConfig config;
 
     public static boolean isWhitelisted = false;
+    public static boolean updateMessageClosed = false;
 
     public static NormalizerConfig getConfig() {
         if (config == null) {

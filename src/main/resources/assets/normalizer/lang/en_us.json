@@ -1,5 +1,8 @@
 {
   "config.normalizer.title": "Normal1.8zer Settings",
+  "config.normalizer.update.title": "§aUPDATE AVAILABLE!",
+  "config.normalizer.update.text": "A new update to Normal1.8zer has been released & is now available",
+  "config.normalizer.update.getLatestButton": "Get latest version from Modrinth",
   "config.normalizer.category.general": "General",
   "config.normalizer.category.servers": "Servers",
   "config.normalizer.option.restoreSneakingHitbox": "Restore 1.8 Sneaking Hitbox",
@@ -13,7 +16,7 @@
   "config.normalizer.option.restoreLegacyBuckets": "Restore Legacy Buckets",
   "config.normalizer.tooltip.restoreLegacyBuckets": "A port of the old pre-aquatic (<=1.12.2) water/lava buckets; §crequires Minecraft restart.",
   "config.normalizer.option.restoreSprintCancel": "Restore Sprint Canceling",
-  "config.normalizer.tooltip.restoreSprintCancel": "Fixes §eMC-152728§r\n\nRestores sprint canceling when you do actions that slow you down\n& should cancel your sprint (eg: eating, blocking).\n\nThis was fixed in 1.21.4 but was reverted in 1.21.5 after community backlash",
+  "config.normalizer.tooltip.restoreSprintCancel": "Fixes §eMC-152728§r\n\nRestores sprint canceling when you do actions that slow you down\n& should cancel your sprint (eg: eating, blocking).\n\nThis was restored in 1.21.4 but was reverted in 1.21.5 after community backlash",
   "config.normalizer.option.serverWhitelist": "Whitelisted Servers",
   "config.normalizer.tooltip.serverWhitelist": "List of servers that the mod is enabled on.",
   "config.normalizer.option.multiplayerOnly": "Multiplayer Only",
