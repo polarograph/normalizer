@@ -132,6 +132,17 @@ public class NormalizerConfigScreen {
                 .build()
         );
 
+        servers.addEntry(entryBuilder
+                .startBooleanToggle(
+                        Component.translatable("config.normalizer.option.fixSneakDesyncWarning"),
+                        config.fixSneakDesyncWarning
+                )
+                .setDefaultValue(true)
+                .setTooltip(Component.translatable("config.normalizer.tooltip.fixSneakDesyncWarning"))
+                .setSaveConsumer(value -> config.fixSneakDesyncWarning = value)
+                .build()
+        );
+
         if (!ConfigManager.updateMessageClosed) {
             CompletableFuture
                     .supplyAsync(VersionTool::fetchLatestVersion)

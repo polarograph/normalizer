@@ -21,5 +21,7 @@
   "config.normalizer.tooltip.serverWhitelist": "List of servers that the mod is enabled on.",
   "config.normalizer.option.multiplayerOnly": "Multiplayer Only",
   "config.normalizer.tooltip.multiplayerOnly": "Limits the mod to only Multiplayer servers.",
+  "config.normalizer.option.fixSneakDesyncWarning": "Fix Sneak Desync Warning",
+  "config.normalizer.tooltip.fixSneakDesyncWarning": "Shows a warning on server join if you have §lFix Sneak Desync§r enabled.",
   "club.polarite.normalizer.sneakDesyncFixWarningMessage": "§cNORMAL1.8ZER §4You have enabled the Sneak Desync Fix, which is known to flag some anticheats.\n\n§lPROCEED AT YOUR OWN RISK!\n\n§4To disable the fix, run §b/normalizerconfig§4 and toggle the setting."
 }

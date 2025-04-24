@@ -20,4 +20,5 @@ public class NormalizerConfig {
     );
 
     public boolean multiplayerOnly = true;
+    public boolean fixSneakDesyncWarning = true;
 }
