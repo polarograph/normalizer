@@ -76,6 +76,17 @@ public class NormalizerConfigScreen {
 
         general.addEntry(entryBuilder
                 .startBooleanToggle(
+                        Component.translatable("config.normalizer.option.disableBedBounce"),
+                        config.disableBedBounce
+                )
+                .setDefaultValue(true)
+                .setTooltip(Component.translatable("config.normalizer.tooltip.disableBedBounce"))
+                .setSaveConsumer(value -> config.disableBedBounce = value)
+                .build()
+        );
+
+        general.addEntry(entryBuilder
+                .startBooleanToggle(
                         Component.translatable("config.normalizer.option.fixSneakDesync"),
                         config.fixSneakDesync
                 )

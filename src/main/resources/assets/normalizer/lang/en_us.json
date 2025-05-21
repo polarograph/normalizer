@@ -11,6 +11,8 @@
   "config.normalizer.tooltip.disableSwimming": "Turns off the new swimming mechanics.",
   "config.normalizer.option.disableCrawling": "Disable Crawling",
   "config.normalizer.tooltip.disableCrawling": "Disables the annoying crawling pose.",
+  "config.normalizer.option.disableBedBounce": "Disable Bed Bounce",
+  "config.normalizer.tooltip.disableBedBounce": "Disables the bouncing feature on beds. Good for Bedwars.",
   "config.normalizer.option.fixSneakDesync": "Fix Sneak Desync",
   "config.normalizer.tooltip.fixSneakDesync": "Fixes §eMC-159163§r (which produces the double sneaking bug)\n§4MAY RESULT IN FALSE BANS, USE AT YOUR OWN RISK",
   "config.normalizer.option.restoreLegacyBuckets": "Restore Legacy Buckets",

@@ -11,6 +11,7 @@ public class NormalizerConfig {
     public boolean restoreSneakingHitbox = true;
     public boolean disableSwimming = true;
     public boolean disableCrawling = true;
+    public boolean disableBedBounce = true;
     public boolean fixSneakDesync = false;
     public boolean restoreLegacyBuckets = false;
     public boolean restoreSprintCancel = true;
