@@ -20,7 +20,7 @@ import java.io.ObjectInputFilter;
 public class BedBlockMixin {
     @Inject(method = "updateEntityMovementAfterFallOn", at = @At("HEAD"), cancellable = true)
     private void disableBounce(BlockGetter blockGetter, Entity entity, CallbackInfo ci) {
-        if (ConfigManager.getConfig().disableBedBounce && !ConfigManager.isWhitelisted) {
+        if (ConfigManager.getConfig().disableBedBounce && ConfigManager.isWhitelisted) {
             ci.cancel();
         }
     }
