@@ -16,7 +16,9 @@ This mod modifies:
 - Swimming (disabled)
 - Crawling (disabled)
 - Sneaking (Hitbox reverted back to <=1.8 & MC-159163 fix)
+- Sprinting (Sprint Resetting readded on 1.21.5+)
 - Buckets (reverted back to <=1.12.2)
+- Beds (no bounce)
 
 The following changes make the general experience much better & less buggy, allowing for smoother gameplay on the latest versions
 
