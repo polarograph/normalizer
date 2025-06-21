@@ -18,7 +18,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
  */
 @Mixin(ClientPacketListener.class)
 public class SneakDesyncFixMixin {
-    @Inject(method = "handleSetEntityData", at = @At("HEAD"))
+    @Inject(
+            method = "handleSetEntityData",
+            at = @At("HEAD")
+    )
     private void onHandleSetEntityData(ClientboundSetEntityDataPacket packet, CallbackInfo ci) {
         boolean fixSneakDesync = ConfigManager.getConfig().fixSneakDesync;
 

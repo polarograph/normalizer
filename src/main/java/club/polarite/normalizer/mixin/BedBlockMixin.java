@@ -16,7 +16,10 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 public class BedBlockMixin {
     @Redirect(
             method = "updateEntityMovementAfterFallOn",
-            at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/Entity;isSuppressingBounce()Z")
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/world/entity/Entity;isSuppressingBounce()Z"
+            )
     )
     private boolean fakeSuppressBounce(Entity entity) {
         return (ConfigManager.getConfig().disableBedBounce && ConfigManager.isWhitelisted) || entity.isSuppressingBounce();

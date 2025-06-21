@@ -29,7 +29,10 @@ public abstract class DisableCrawlMixin extends LivingEntity {
 
     @Inject(
             method = "updatePlayerPose",
-            at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/player/Player;isSpectator()Z"),
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/world/entity/player/Player;isSpectator()Z"
+            ),
             cancellable = true
     )
     protected void disablePoseToFit(CallbackInfo ci, @Local(ordinal = 0) Pose pose) {

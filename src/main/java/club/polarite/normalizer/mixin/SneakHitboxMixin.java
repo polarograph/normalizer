@@ -16,7 +16,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
  */
 @Mixin(Player.class)
 public abstract class SneakHitboxMixin {
-    @Inject(method = "getDefaultDimensions", at = @At("HEAD"), cancellable = true)
+    @Inject(
+            method = "getDefaultDimensions",
+            at = @At("HEAD"), cancellable = true
+    )
     private void modifySneakDimensions(Pose pose, CallbackInfoReturnable<EntityDimensions> cir) {
         boolean restoreSneakingHitbox = ConfigManager.getConfig().restoreSneakingHitbox;
         if (!restoreSneakingHitbox) {

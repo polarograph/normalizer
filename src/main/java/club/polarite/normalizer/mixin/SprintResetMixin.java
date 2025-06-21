@@ -46,7 +46,13 @@ public abstract class SprintResetMixin extends AbstractClientPlayer {
     @Unique
     String version = SharedConstants.getCurrentVersion().getName(); // .name() in 1.21.6, automatically gonna be changed at build-time by gradle 👍️
 
-    @Inject(method = "aiStep", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/player/ClientInput;tick()V", shift = At.Shift.AFTER))
+    @Inject(
+            method = "aiStep",
+            at = @At(value = "INVOKE",
+                    target = "Lnet/minecraft/client/player/ClientInput;tick()V",
+                    shift = At.Shift.AFTER
+            )
+    )
     private void sprintReset(CallbackInfo ci) {
         boolean restoreSprintCancel = ConfigManager.getConfig().restoreSprintCancel;
         if (this.shouldStopSprinting() && ConfigManager.isWhitelisted && restoreSprintCancel && !Objects.equals(version, "1.21.4")) {
