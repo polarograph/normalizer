@@ -29,7 +29,7 @@ import java.util.concurrent.CompletableFuture;
 public class NormalizerConfigScreen {
     public static Screen create(Screen parent) {
         NormalizerConfig config = ConfigManager.getConfig();
-        String mcVersion = SharedConstants.getCurrentVersion().getName();
+        String mcVersion = SharedConstants.getCurrentVersion().getName(); // .name() in 1.21.6, automatically gonna be changed at build-time by gradle 👍️
         String installedVersion = VersionTool.getInstalledVersion();
 
         ConfigBuilder builder = ConfigBuilder.create()

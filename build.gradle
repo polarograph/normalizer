@@ -1,14 +1,29 @@
 plugins {
-	id 'fabric-loom' version '1.10-SNAPSHOT'
+	id 'fabric-loom' version "1.10-SNAPSHOT"
 	id 'maven-publish'
 }
 
-version = project.mod_version
-group = project.maven_group
+def is1216 = project.hasProperty("mc_target") && project.mc_target == "1.21.6"
 
+ext {
+	minecraft_version = is1216 ? "1.21.6" : "1.21.5"
+	yarn_mappings = is1216 ? "1.21.6+build.1" : "1.21.5+build.1"
+	loader_version = is1216 ? "0.16.14" : "0.16.13"
+	fabric_version = is1216 ? "0.127.1+1.21.6" : "0.121.0+1.21.5"
+
+	target_version = is1216 ? "1.21.6" : "1.21.4-1.21.5"
+}
+
+// version print
+println "==> Building for Minecraft ${minecraft_version} " +
+		"with mappings ${yarn_mappings} " +
+		"and Fabric Loader ${loader_version}"
+
+version = project.mod_version
+group   = project.maven_group
 
 base {
-	archivesName = "${project.archives_base_name}-${project.target_version}"
+	archivesName = "${project.archives_base_name}-${target_version}"
 }
 
 repositories {
@@ -17,11 +32,10 @@ repositories {
 }
 
 dependencies {
-	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-	mappings loom.officialMojangMappings()
-	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-
-	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+	minecraft     "com.mojang:minecraft:${minecraft_version}"
+	mappings       loom.officialMojangMappings()
+	modImplementation "net.fabricmc:fabric-loader:${loader_version}"
+	modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
 
 	modApi("me.shedaniel.cloth:cloth-config-fabric:17.0.144") {
 		exclude(group: "net.fabricmc.fabric-api")
@@ -37,13 +51,33 @@ processResources {
 	}
 }
 
+task preprocessJava(type: Copy) {
+	from 'src/main/java'
+	into "$buildDir/preprocessedSrc"
+	include '**/*.java'
+	filter { String line ->
+		if (is1216) {
+			return line.replace(
+					'getCurrentVersion().getName()',
+					'getCurrentVersion().name()'
+			)
+		} else {
+			return line
+		}
+	}
+}
+
+compileJava {
+	dependsOn preprocessJava
+	source = fileTree("$buildDir/preprocessedSrc") { include '**/*.java' }
+}
+
 tasks.withType(JavaCompile).configureEach {
 	it.options.release = 21
 }
 
 java {
 	withSourcesJar()
-
 	sourceCompatibility = JavaVersion.VERSION_21
 	targetCompatibility = JavaVersion.VERSION_21
 }
@@ -52,7 +86,7 @@ jar {
 	inputs.property "archivesName", project.base.archivesName
 
 	from("LICENSE") {
-		rename { "${it}_${inputs.properties.archivesName}"}
+		rename { "${it}_${inputs.properties.archivesName}" }
 	}
 }
 
