@@ -70,6 +70,10 @@ task preprocessJava(type: Copy) {
 compileJava {
 	dependsOn preprocessJava
 	source = fileTree("$buildDir/preprocessedSrc") { include '**/*.java' }
+
+	doLast {
+		delete "$buildDir/preprocessedSrc"
+	}
 }
 
 tasks.withType(JavaCompile).configureEach {
