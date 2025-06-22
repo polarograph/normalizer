@@ -2,6 +2,7 @@
 
 ![icon.png](src/main/resources/assets/normalizer/icon.png)
 
+![Modrinth Downloads](https://img.shields.io/modrinth/dt/normalizer?color=00AF5C&label=downloads&logo=modrinth)
 ## Based on NoChangeTheGame by Cecer, but minified & up to date
 Compatibility tool for 1.8 servers that support joining on the latest versions of Minecraft (such as Hypixel).
 
